@@ -1,0 +1,5 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+Badge	/Users/DBoardman/projects/react-udemy/section2/form.js	/^var Badge = React.createClass({$/;"	v	language:JavaScript
+Form	/Users/DBoardman/projects/react-udemy/section2/form.js	/^var Form = React.createClass({$/;"	v	language:JavaScript
+options.number	/Users/DBoardman/projects/react-udemy/section2/form.js	/^  number: 5$/;"	p	language:JavaScript
+options.titile	/Users/DBoardman/projects/react-udemy/section2/form.js	/^  titile: 'Inbox',$/;"	p	language:JavaScript

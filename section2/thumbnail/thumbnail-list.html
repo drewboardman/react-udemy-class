@@ -1,0 +1,70 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class-"container">
+    <div class="row">
+      <div class="col-sm-5 target">
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/jsx">
+  var Badge = React.createClass({
+    render: function() {
+      return <button className="btn btn-primary" type="button">
+        {this.props.title} <span className="badge">{this.props.number}</span>
+      </button>
+    }
+  });
+
+  var Thumbnail = React.createClass({
+    render: function() {
+      return <div className="thumbnail col-sm-6 col-md-4">
+        <img src={this.props.imageUrl} />
+        <div className="caption">
+          <h3>{this.props.header}</h3>
+          <p>{this.props.description}</p>
+          <p>
+            <Badge title={this.props.title} number={this.props.number}/>
+          </p>
+        </div>
+      </div>
+    }
+  });
+
+  var ThumbnailList = React.createClass({
+    render: function() {
+      var list = this.props.thumbnailData.map(function(thumbnailProps){
+        //This ...syntax is shorthand for title={thumbnailProps.title} number={thumbnailProps.number} etc etc
+        return <Thumbnail {...thumbnailProps} />
+      });
+
+      return <div>
+        {list}
+      </div>
+    }
+  });
+
+  //We want to use an array of thumbnail option objects. The thumbnailData is the array we want
+  var options = {
+    thumbnailData: [{
+      title: 'Inbox',
+      number: 32,
+      header: 'React Tutorial',
+      description: 'Learning React through the tutorial',
+      imageUrl: 'http://formatjs.io/img/react.svg'
+    },{
+      title: 'Inbox',
+      number: 15,
+      header: 'Another Tutorial',
+      description: 'This is a description for another tutorial, dawg',
+      imageUrl: 'https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bx4BSt6jniD7NndTQW9VZTlZV2s/materialdesign_principles_bold.png'
+    }]
+  };
+
+  var element = React.createElement(ThumbnailList, options);
+  React.render(element, document.querySelector('.target'));
+</script>

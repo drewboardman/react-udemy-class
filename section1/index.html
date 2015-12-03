@@ -1,0 +1,22 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+</head>
+<body>
+  <script type="text/jsx">
+    //Define a class
+    //createClass takes a configuration object and MUST always contain a #render method that returns JSX
+    var HelloWorld = React.createClass({
+      render: function() {
+        return <div>
+          Hello World!
+        </div>
+      }
+      });
+    //React, render class
+    //This element is an instance of the HelloWorld class
+    var element = React.createElement(HelloWorld);
+    //React, place class in body tag after rendering class
+    React.render(element, document.body);
+  </script>
+</body>
